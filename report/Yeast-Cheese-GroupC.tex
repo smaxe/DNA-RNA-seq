@@ -21,8 +21,8 @@ Our main result from the second task is the newly assembled and annotated genome
 
 \end{abstract}
 
-\pagebreak
-\tableofcontents
+%\pagebreak
+%\tableofcontents
 
 \pagebreak
 \part{Identification of novel regulators and/or targets of TORC1 in yeast mutants}
@@ -37,21 +37,36 @@ Asses, whether the involved proteins are already known to be involved in the TOR
 If there are new candidates, we were trying to characterize their function as new regulators or targets of the TORC1 pathway.
 
 \section{Data and Methods}
-Genomic DNA libraries were prepared in advance and handed over to us in gzipped FASTQ file format.
+Paired DNA libraries were prepared in advance and handed over to us in gzipped FASTQ file format. Table \ref{yeast-files} shows some basic information about the data.
+
+\begin{table}[]
+\centering
+\label{yeast-files}
+\begin{tabular}{l|r|r|r}
+\textbf{Filename}           &\textbf{Total Sequences} & \textbf{Sequence length} & \textbf{\%GC} \\
+M1\_S237\_R1\_001.fastq.gz  & 3493039                                      & 35-151                                       & 37                                \\
+M1\_S237\_R2\_001.fastq.gz  & 3493039                                      & 35-151                                       & 38                                \\
+M14\_S196\_R1\_001.fastq.gz & 5619726                                      & 35-151                                       & 37                                \\
+M14\_S196\_R2\_001.fastq.gz & 5619726                                      & 35-151                                       & 37                                \\
+M16\_S224\_R1\_001.fastq.gz & 5311850                                      & 35-151                                       & 37                                \\
+M16\_S224\_R2\_001.fastq.gz & 5311850                                      & 35-151                                       & 37                                \\
+M18\_S257\_R1\_001.fastq.gz & 5483798                                      & 35-151                                       & 37                                \\
+M18\_S257\_R2\_001.fastq.gz & 5483798                                      & 35-151                                       & 37                                \\
+M21\_S250\_R1\_001.fastq.gz & 4089470                                      & 35-151                                       & 36                                \\
+M21\_S250\_R2\_001.fastq.gz & 4089470                                      & 35-151                                       & 36                                \\
+M24\_S240\_R1\_001.fastq.gz & 4029845                                      & 35-151                                       & 36                                \\
+M24\_S240\_R2\_001.fastq.gz & 4029845                                      & 35-151                                       & 36                               
+\end{tabular}
+\caption{Yeast Raw Data}
+\end{table}
+
+Data processing was done using the proposed pipeline.
 
 \section{Results}
 
 We identified the following SNPs to be interesting. Table xy shows these observed mutations.
 
-\begin{center}
-  \begin{tabular}{ | l | c | r | }
-    \hline
-    1 & 2 & 3 \\ \hline
-    4 & 5 & 6 \\ \hline \hline
-    7 & 8 & 9 \\
-    \hline
-  \end{tabular}
-\end{center}
+
 
 \subsection{Mutant I}
 Already known to be interferring w/ the TORC1 pathway. (Refernece)
