@@ -46,7 +46,7 @@ Asses, whether the involved proteins are already known to be involved in the TOR
 If there are new candidates, we were trying to characterize their function as new regulators or targets of the TORC1 pathway.
 
 \section{Data and Methods}
-Paired DNA libraries were prepared in advance and handed over to us in gzipped FASTQ file format. Table~\ref{tab:yeastfiles} shows some basic information about the data.
+Paired-end DNA libraries were prepared in advance and handed over to us in gzipped FASTQ file format. Table~\ref{tab:yeastfiles} shows some basic information about the data. As a reference genome, we used \emph{R64-1-1.79.fa}, which was provided by the course authorities.
 
 \begin{table}[]
 \centering
@@ -69,18 +69,37 @@ M24\_S240\_R2\_001.fastq.gz & 4029845                                      & 35-
 \label{tab:yeastfiles}
 \end{table}
 
-TODO: Mention Reference genome
-
 Data processing was done in multiple stages using free-of-charge and open-sourse software tools. The main steps were executed manually on the High Performance Computing Cluster of the University of Bern.
 
 \begin{description}
-\item[Quality Control] After receiving the raw data, we used the FastQC \cite{FastQC} tool to assess the quality of the reads. The contents of Table~\ref{tab:yeastfiles} was taken from this step. 
-\item[Filtering] tewltj
+\item[Quality Control] After receiving the raw data, we used the FastQC \cite{FastQC} tool to assess the quality of the reads. The quality of the data was below our expectations. Especially the reverse reads (*\_R2\_*-files) were of bad quality at high positions in the reads.
+
+\item[Filtering] In order to remove bad quality data and trim the ends of the reads, we used Sickle \cite{sickle} with the option for paired end sequence trimming on all our raw data files. The output was three files for each strain under consideration: a trimmed forward file, a trimmed reverse file, and a file containing trimmed single reads. All of which were in FASTQ-format.
+
+\item[Indexing, mapping, and sorting] After indexing the reference genome using the BWA \cite{BWA} tool, we were able to map each pair of files (R1 and R2) onto it. By further processing of the data with Samtools \cite{SAMtools}, which includes format conversion, sorting, and indexing, we produced a binary compressed BAM file, which is the binary version of a SAM file. A SAM file is a tab-delimited text file that contains sequence alignment data. Both formats are described on the SAM Tools web site \cite{SAMtools}.
+
+\item[SNP calling and identification of SNP effects] In order to find potential interesting mutations within our strains of yeast ("variants"), we were looking for SNPs ("Single Nucleotide Polymorphisms"). Using SAM Tools \cite{SAMtools}, a combined VCF file was generated. By using the SNPeff tool, which is a genetic variant annotation and effect prediction toolbox \cite{cingolani2012program}, we tried to identify interesting point mutations and their effects. Table~\ref*{tab:yeastsnps} shows the main output of this step.
+
+\item[Visualization] IGV
+
 \end{description}
 
 \section{Results}
 
 We identified the following SNPs to be interesting. Table xy shows these observed mutations.
+
+\begin{table}[]
+\centering
+
+\begin{tabular}{|l|l|l|}
+\hline
+ &  &  \\ \hline
+ &  &  \\ \hline
+ &  &  \\ \hline
+\end{tabular}
+\caption{SNPs}
+\label{tab:yeastsnps}
+\end{table}
 
 \subsection{Mutant I}
 Already known to be interferring w/ the TORC1 pathway. (Refernece)
