@@ -3,6 +3,7 @@
 \usepackage{hyperref} 
 \usepackage{csquotes}
 \usepackage{url}
+\usepackage{graphicx}
 %\usepackage[]{biblatex}
 
 %\addbibresource[]{rsc.bib}
@@ -51,7 +52,7 @@ Paired-end DNA libraries were prepared in advance and handed over to us in gzipp
 \begin{table}[]
 \centering
 \begin{tabular}{l|r|r|r}
-\textbf{Filename}           &\textbf{Total Sequences} & \textbf{Sequence length} & \textbf{\%GC} \\
+\textbf{Filename}           &\textbf{Total Sequences} & \textbf{Sequence length} & \textbf{\%GC} \\ \hline
 M1\_S237\_R1\_001.fastq.gz  & 3493039                                      & 35-151                                       & 37                                \\
 M1\_S237\_R2\_001.fastq.gz  & 3493039                                      & 35-151                                       & 38                                \\
 M14\_S196\_R1\_001.fastq.gz & 5619726                                      & 35-151                                       & 37                                \\
@@ -82,9 +83,20 @@ Data processing was done in multiple stages using free-of-charge and open-sourse
 
 \item[Visualization] IGV
 
+\begin{figure}[here]
+\begin{center}
+\includegraphics[width=\textwidth]{IGV_yeast}
+\end{center}
+\caption{SNP visualization using IGV}
+\label{fig:yeastsnpigv}
+\end{figure}
+
+
 \end{description}
 
 \section{Results}
+
+
 
 We identified the following SNPs to be interesting. Table xy shows these observed mutations.
 
