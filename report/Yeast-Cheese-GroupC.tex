@@ -1,11 +1,15 @@
 \documentclass[10pt,a4paper]{article}
 
-%\usepackage{hyperref} 
-%\usepackage{csquotes}
-%\usepackage{url}
+\usepackage{hyperref} 
+\usepackage{csquotes}
+\usepackage{url}
 %\usepackage[]{biblatex}
 
 %\addbibresource[]{rsc.bib}
+
+\usepackage[backend=bibtex,style=numeric-comp]{biblatex}
+\addbibresource{Yeast-Cheese-GroupC.bib}
+
 
 %opening
 \title{Group C: Report DNA/RNA Sequencing Course\newline Bread and Cheese}
@@ -70,7 +74,7 @@ TODO: Mention Reference genome
 Data processing was done in multiple stages using free-of-charge and open-sourse software tools. The main steps were executed manually on the High Performance Computing Cluster of the University of Bern.
 
 \begin{description}
-%\item[Quality Control] After receiving the raw data, we used the FastQC tool to assess the quality of the reads. The contents of Table~\ref{tab:yeastfiles} was taken from this step. 
+\item[Quality Control] After receiving the raw data, we used the FastQC \cite{FastQC} tool to assess the quality of the reads. The contents of Table~\ref{tab:yeastfiles} was taken from this step. 
 \item[Filtering] tewltj
 \end{description}
 
@@ -121,5 +125,7 @@ Although the overall quality of the data was acceptable, we used sickle to corre
 \appendix
 \section{Appendix Some picture of data processing pipeline}
 \section{Appendix Second picture of data processing pipeline}
+
+\printbibliography
 
 \end{document}
